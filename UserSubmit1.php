@@ -1,10 +1,8 @@
 <?php
  include ("connectapi.php");
 
-    // $ID= $_POST['ID'];
-    $score = $_GET['score'];
-    $initial = $_GET['initial'];
-    $deemfit = $_GET['deemfit'];
+    $score = $_POST['score'];
+    $initial = $_POST['initial'];
 
     $SQL = "select * from student_quiz";
     $result = mysqli_query($conn,$SQL);
@@ -15,3 +13,4 @@
         $response = ['status'=>500, 'message'=>'Internal server error!'];
         echo json_encode($response);
     }
+?>
